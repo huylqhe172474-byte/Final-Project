@@ -1,0 +1,149 @@
+/* GENERAL STYLING */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f1ea;
+    color: #263238;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #174a5b;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+a {
+    color: #174a5b;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* MOBILE VIEW - MOBILE FIRST */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+    background-color: #ffffff;
+    border: 3px solid #174a5b;
+    border-radius: 8px;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+footer {
+    margin-top: 25px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* TABLET VIEW - 772px AND ABOVE */
+
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    figure {
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    figure img {
+        width: 85%;
+        height: 70%;
+        object-fit: cover;
+    }
+
+    figure:last-child {
+        grid-column: span 2;
+        width: 50%;
+        justify-self: center;
+    }
+}
+
+/* LARGE SCREEN VIEW - 992px AND ABOVE */
+
+@media screen and (min-width: 992px) {
+    figure {
+        border-radius: 0;
+    }
+
+    figure:last-child {
+        grid-column: auto;
+        width: auto;
+    }
+
+    figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+}
+
+/* REDUCED MOTION PREFERENCE */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* DARK COLOR SCHEME */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #f5f5f5;
+    }
+
+    h1 {
+        color: #ffdf70;
+    }
+
+    figure {
+        background-color: #292929;
+        color: #ffdf70;
+        border-color: #000000;
+    }
+
+    a {
+        color: #ffdf70;
+    }
+}
